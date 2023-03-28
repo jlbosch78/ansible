@@ -1,9 +1,6 @@
 
 ---
-    - hosts: halcon
-      tasks:
-      - name: Modificad DNS
-        ansible.windows.win_dns_client:
-          adapter_names: 'Ethernet*'
-          dns_servers: 172.16.4.86
-          dns_servers: 172.16.4.186
+- hosts:
+    - all
+  tasks:
+    - action: ping
