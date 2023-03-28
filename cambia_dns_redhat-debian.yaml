@@ -1,0 +1,83 @@
+---
+- name: Cambia los nameservers en el archivo /etc/resolv.conf
+#con esto le decimos que aplique a todos hosts
+  hosts: all
+  #con become le decimos que escale privilegios y ejecute como root si estamos autorizados en sudo  
+  become: yes
+  tasks:
+    - name: Reemp. resolv.conf actual 172.16.4.28 por 172.16.4.86
+      replace:
+        path: /etc/resolv.conf
+        regexp: 'nameserver 172.16.4.28'
+        replace: 'nameserver 172.16.4.86'
+
+    - name: Reemp. resolv.conf actual 172.19.9.28 por 172.16.4.186
+      replace:
+        path: /etc/resolv.conf
+        regexp: 'nameserver 172.19.9.28'
+        replace: 'nameserver 172.16.4.186'
+    
+    - name: RedHat ens192 DNS1 172.16.4.28 por 172.16.4.86
+      replace:
+        path: /etc/sysconfig/network-scripts/ifcfg-ens192
+        #busca algo: ^ que comience con DNS1 . cualquier caracter * que se puede repetir 0 o mas veces $ final de la linea
+        regexp: '^(DNS1=).*$'
+        replace: 'DNS1="172.16.4.86"'
+      when: 
+        -  ansible_facts['os_family'] == "RedHat"
+        -  "{{ ansible_default_ipv4.alias == 'ens192'}}"
+      
+
+    - name: RedHat ens192 DNS2 172.19.9.28 por 172.16.4.186
+      replace:
+        path: /etc/sysconfig/network-scripts/ifcfg-ens192
+        regexp: '^(DNS2=).*$'
+        replace: 'DNS2="172.16.4.186"'
+      when: 
+        -  ansible_facts['os_family'] == "RedHat"
+        -  "{{ ansible_default_ipv4.alias == 'ens192'}}"
+        
+        
+    - name: RedHat eth0 DNS1 172.16.4.28 por 172.16.4.86
+      replace:
+        path: /etc/sysconfig/network-scripts/ifcfg-eth0
+        regexp: '^(DNS1=).*$'
+        replace: 'DNS1="172.16.4.86"'
+      when: 
+        -  ansible_facts['os_family'] == "RedHat"
+        -  ("{{ ansible_default_ipv4.alias == 'eth0'}}")
+
+    - name: RedHat eth0 DNS2 172.19.9.28 por 172.16.4.186
+      replace:
+        path: /etc/sysconfig/network-scripts/ifcfg-eth0
+        regexp: '^(DNS2=).*$'
+        replace: 'DNS2="172.16.4.186"'
+      when: 
+        -  ansible_facts['os_family'] == "RedHat"
+        -  ("{{ ansible_default_ipv4.alias == 'eth0'}}")
+        
+    - name: RedHat eth3 DNS1 172.16.4.28 por 172.16.4.86
+      replace:
+        path: /etc/sysconfig/network-scripts/ifcfg-Auto_eth3
+        regexp: '^(DNS1=).*$'
+        replace: 'DNS1="172.16.4.86"'
+      when: 
+        -  ansible_facts['os_family'] == "RedHat"
+        -  ("{{ ansible_default_ipv4.alias == 'eth0'}}") or ("{{ ansible_default_ipv4.alias == 'eth3'}}")
+
+    - name: RedHat eth3 DNS2 172.19.9.28 por 172.16.4.186
+      replace:
+        path: /etc/sysconfig/network-scripts/ifcfg-Auto_eth3
+        regexp: '^(DNS2=).*$'
+        replace: 'DNS2="172.16.4.186"'
+      when: 
+        -  ansible_facts['os_family'] == "RedHat"
+        -  ("{{ ansible_default_ipv4.alias == 'eth0'}}") or ("{{ ansible_default_ipv4.alias == 'eth3'}}")
+      
+    - name: Actualiza Debian network interfaces
+      replace:
+        path: /etc/network/interfaces
+        regexp: '^.*dns-nameservers .*$'
+        replace: '	dns-nameservers 172.16.4.86 172.16.4.186'
+      when: ansible_facts['os_family'] == "Debian"
+
