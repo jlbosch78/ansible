@@ -1,0 +1,33 @@
+---
+- name: Compruebo existencia del directorio /home/jalligona
+  hosts: test
+  become: yes
+  tasks:
+
+    - name: verifica existencia
+      stat:
+        path: /home/jalligona
+      register: dir_check
+    - name: Crear el directorio emoliner en /home si no existe y asigna propitario y permisos
+      file:
+        path: /home/jalligona
+        state: directory
+        owner: jalligona
+        group: jalligona
+        mode: '0755'
+        
+    - name: Crea el directorio oculto .ssh (el punto indica que es oculto) y asigna propietario y permisos
+      file:
+        path: /home/jalligona/.ssh
+        state: directory
+        owner: jalligona
+        group: jalligona
+        mode: '0700'
+
+    - name: Crea el archivo authorized_keys y asigna propietario y permisos
+      file:
+        path: /home/jalligona/.ssh/authorized_keys
+        state: touch
+        owner: jalligona
+        group: jalligona
+        mode: '0666'

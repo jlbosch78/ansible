@@ -1,0 +1,13 @@
+---
+- name: "Chocolatey"
+  hosts: halcon2
+  tasks:
+
+          
+    - name: Uninstall Notepad++ from the exe
+      win_package:
+          path: C:\Program Files\Notepad++\Uninstall.exe
+          product_id: notepadplusplus.install
+          state: absent
+
+

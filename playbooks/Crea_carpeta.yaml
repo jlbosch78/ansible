@@ -1,0 +1,6 @@
+
+---
+    - hosts: arcade
+      tasks:
+      - name: Crear una carpeta
+        win_command: cmd.exe /c mkdir C:\nombre_de_la_carpeta

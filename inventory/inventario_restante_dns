@@ -1,0 +1,36 @@
+[xdecidir]
+
+#reactme.usj.es CON ERROR
+#ingoscar.usj.es mal pass root
+
+#firepower.usj.es firewall de redes 
+#radius.usj.es IP debajo pero no conecta /Dejarlo, no hacer nada. Se cambiará
+#172.16.4.24
+#ubuntu16-vm.usj.es	 
+#VC-CORP-USJ-ZRG-01.usj.es	 
+#vcenter1.usj.es	 
+#vcenter1cs.usj.es	 
+#vcenter2.usj.es	 
+#vm-airwave.usj.es	 
+#vreplication.usj.es
+#nemo1.usj.es ansible_python_interpreter=/usr/bin/python3	 
+#nemo1cs.usj.es actual dns secundario 172.19.9.28 no vale la pena hacer nada sobre el
+#nemo1cs.usj.es
+[vcenter]
+#ArubaMM1.usj.es	 
+#bullseye.usj.es	 
+
+
+
+[radius]
+#radius2.usj.es
+172.16.4.18	ansible_python_interpreter=/usr/bin/python3
+#radiuscs.usj.es	ansible_connection=paramiko_ssh  SIN PYTHON QUITAR
+radiusd1.usj.es	ansible_python_interpreter=/usr/bin/python3 
+radiusext2.usj.es ansible_python_interpreter=/usr/bin/python3	 
+#radiusvpn2.usj.es
+172.16.4.110 ansible_python_interpreter=/usr/bin/python3
+
+
+
+

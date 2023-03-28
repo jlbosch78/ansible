@@ -1,0 +1,34 @@
+---
+- name: Compruebo existencia del directorio /home/emoliner
+  hosts: prueba
+  become: yes
+  tasks:
+
+    - name: verifica existencia
+      stat:
+        path: /home/emoliner
+      register: dir_check
+    - name: Crear el directorio emoliner en /home si no existe y asigna propietario y permisos
+      file:
+        path: /home/emoliner
+        state: directory
+        owner: emoliner
+        group: emoliner
+        mode: '0755'
+        
+    - name: Crea el directorio oculto .ssh (el punto indica que es oculto) y asigna propietario y permisos
+      file:
+        path: /home/emoliner/.ssh
+        state: directory
+        owner: emoliner
+        group: emoliner
+        mode: '0700'
+
+    - name: Crea el archivo authorized_keys y asigna propietario y permisos
+      file:
+        path: /home/emoliner/.ssh/authorized_keys
+        state: touch
+        owner: emoliner
+        group: emoliner
+        mode: '0666'
+        

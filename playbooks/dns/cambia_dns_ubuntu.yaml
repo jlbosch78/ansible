@@ -1,0 +1,33 @@
+---
+
+#tener en cuenta que los Ubuntu pueden no definir el nameserver en /etc/resolv.conf sino en /etc/netplan/loquesea
+#por eso este playbook tiene que modificarse con los Ubuntu y poner el archivo correcto que exista en /etc/netplan/
+- name: Cambia los nameservers en el archivo /etc/resolv.conf
+  hosts: test
+  become: yes
+  tasks:
+    - name: Reemplazar los nameservers actuales por 172.16.4.86 y 172.16.4.186
+      replace:
+        path: /etc/resolv.conf
+        regexp: 'nameserver 172.16.4.28'
+        replace: 'nameserver 172.16.4.86'
+
+    - name: Reemplazar los nameservers actuales por 172.16.4.86 y 172.16.4.186
+      replace:
+        path: /etc/resolv.conf
+        regexp: 'nameserver 172.19.9.28'
+        replace: 'nameserver 172.16.4.186'
+
+
+    - name: Cambia en Ubuntu network interfaces (buscar en 00-installer-config.yaml o 01-netcfg.yaml)
+      replace:
+        path: /etc/netplan/00-installer-config.yaml
+        regexp: '172.16.4.28'
+        replace: '172.16.4.86'
+    
+    - name: Update Ubuntu network interfaces (buscar en 00-installer-config.yaml o 01-netcfg.yaml)
+      replace:
+        path: /etc/netplan/00-installer-config.yaml
+        regexp: '172.19.9.28'
+        replace: '172.16.4.186'    
+

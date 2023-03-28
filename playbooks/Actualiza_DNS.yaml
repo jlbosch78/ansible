@@ -1,0 +1,38 @@
+---
+- name: Update resolv.conf and network interfaces
+  hosts: webdes
+  become: yes
+  vars:
+    new_nameservers:
+      - "172.16.4.86"
+      - "172.16.4.186"
+  tasks:
+    - name: Update resolv.conf
+      lineinfile:
+        dest: /etc/resolv.conf
+        regexp: '^nameserver'
+        line: 'nameserver {{ item }}'
+      with_items: "{{ new_nameservers }}"
+ 
+    - name: Update Debian network interfaces
+      replace:
+        dest: /etc/network/interfaces
+        regexp: '^dns-nameservers .*$'
+        replace: 'dns-nameservers {{ new_nameservers | join(" ") }}'
+      when: "'debian' in ansible_distribution|lower"
+
+    - name: Update Red Hat network interfaces
+      replace:
+        dest: /etc/sysconfig/network-scripts/ifcfg-ens192
+        regexp: '^DNS1=.*$'
+        replace: 'DNS1="{{ new_nameservers[0] }}"'
+      when: '"redhat" in ansible_distribution|lower'
+
+    - name: Add missing DNS2 in Red Hat network interfaces
+      lineinfile:
+        dest: /etc/sysconfig/network-scripts/ifcfg-ens192
+        regexp: '^DNS2=.*$'
+        line: 'DNS2="{{ new_nameservers[1] }}"'
+      when: '"redhat" in ansible_distribution|lower'
+
+# and "DNS2=" not in (item | lower)'

@@ -1,0 +1,10 @@
+
+---
+    - hosts: all
+      tasks:
+      - name: Cambiar DNS
+        ansible.windows.win_dns_client:
+          adapter_names: 'Ethernet*'
+          dns_servers:
+          - '172.16.4.86'
+          - '172.16.4.186'

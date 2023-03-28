@@ -1,0 +1,35 @@
+---
+- name: Copia archivo
+  hosts: all
+  become: yes
+  gather_facts: false
+  tasks:
+
+
+#    - name: verifica existencia
+#      stat:
+#        path: /home/emoliner/inventory
+#      register: dir_check
+#    - name: Crear el directorio inventory en /home/emoliner si no existe y asigna propietario y permisos
+#      file:
+#        path: /home/emoliner/inventory
+#        state: directory
+#        owner: emoliner
+#        group: emoliner
+#        mode: '0755'
+        
+#    - name: Copia el archivo inventario-dns en /home/emoliner y asigna propietario y permisos
+#      copy:
+#        src: /home/jalligona/inventory/inventory
+#        dest: /home/emoliner/inventory/
+#        owner: emoliner
+#       group: emoliner
+#       mode: '0666'
+
+        
+    - name: Copia el archivo inventario-dns en /home/emoliner y asigna propietario y permisos
+      file:
+        path: /home/emoliner/inventory
+        state: absent
+                
+        

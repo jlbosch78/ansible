@@ -1,0 +1,24 @@
+---
+- name: Generar archivo CSV de hosts
+  hosts: all
+  gather_facts: true
+  
+  tasks:
+    - name: Crear archivo CSV
+      local_action:
+        module: file
+        path: /tmp/hosts.csv
+        state: touch
+
+    - name: Escribir encabezados en archivo CSV
+      local_action:
+        module: lineinfile
+        path: /tmp/hosts.csv
+        line: "Host,IP,OS Family"
+        create: yes
+
+    - name: Escribir información de hosts en archivo CSV
+      local_action:
+        module: lineinfile
+        path: /tmp/hosts.csv
+        line: "{{ inventory_hostname }},{{ ansible_host }},{{ ansible_os_family }}"

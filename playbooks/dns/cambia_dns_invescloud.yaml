@@ -1,0 +1,23 @@
+---
+- name: Cambia los nameservers en el archivo /etc/resolv.conf
+  hosts: invescloud
+  become: yes
+  tasks:
+    - name: Reemplaza el nameserver 172.16.4.28 por 172.16.4.86
+      replace:
+        path: /etc/resolv.conf
+        regexp: 'nameserver 172.16.4.28'
+        replace: 'nameserver 172.16.4.86'
+
+    - name: Reemplaza el nameserver 172.19.9.28 por 172.16.4.186
+      replace:
+        path: /etc/resolv.conf
+        regexp: 'nameserver 172.19.9.28'
+        replace: 'nameserver 172.16.4.186'
+    
+    - name: Actualiza DNS en /etc/netplan/01-netcfg.yaml
+      replace:
+        path: /etc/netplan/01-netcfg.yaml
+        regexp: '172.16.4.28,172.19.9.28'
+        replace: '172.16.4.86,172.16.4.186'
+      

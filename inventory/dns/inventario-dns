@@ -1,0 +1,104 @@
+[cambiado]
+#ansible-playbook  -i ~/inventory/inventario-dns ~/playbooks/cambia_dns_prueba_redhat-debian.yaml -KkbC
+#En este grupo de inventario colocamos los servidores a los que queremos cambiar los DNS
+#Con el parámetro -C chequea sin hacer cambios
+#OcuApp2bPruebas.usj.es
+#preproduccion2.usj.es ansible_python_interpreter=/usr/bin/python3
+#quijote1cpp.usj.es
+#quijote2bpp.usj.es
+#riverdes.usj.es
+#fanta1des.usj.es
+#zidanedes.usj.es
+#dragon5des.usj.es
+#dragon5wpdes.usj.es
+#siges2des.usj.es
+#newsletterdes.usj.es
+#gsvdes.usj.es
+#infyserdes.usj.es
+#midas8des.usj.es
+#midas1des.usj.es
+#midas4des.usj.es
+#midas5des.usj.es
+#uxxiapppruebas.usj.es
+#webdes1.usj.es
+#webdes2.usj.es
+#webdes4.usj.es
+#webdes5.usj.es
+#webdes6.usj.es
+#dragon5wpdes2.usj.es ansible_python_interpreter=/usr/bin/python3
+#dailybugledes.usj.es ansible_python_interpreter=/usr/bin/python3
+#apps1.usj.es ansible_python_interpreter=/usr/bin/python3 
+#apps2.usj.es ansible_python_interpreter=/usr/bin/python3 
+#apps3.usj.es ansible_python_interpreter=/usr/bin/python3 
+#apps4.usj.es ansible_python_interpreter=/usr/bin/python3 
+#apps5.usj.es ansible_python_interpreter=/usr/bin/python3
+##uxxiauth.usj.es
+#uxxibd.usj.es
+#uxxi-consola.usj.es
+#midas1.usj.es
+#midas2.usj.es
+#midas3.usj.es
+#midas4.usj.es
+#midas5.usj.es 
+#midas8.usj.es 
+#lydda.usj.es
+#lydda1.usj.es
+#lydda2.usj.es
+#quijote2b.usj.es
+#quijote1c.usj.es
+#arrival2b.usj.es 
+#campusj.usj.es ansible_python_interpreter=/usr/bin/python3
+#checkmk.usj.es ansible_python_interpreter=/usr/bin/python3
+#cierzo.usj.es
+#cobi.usj.es
+#cope.usj.es ansible_python_interpreter=/usr/bin/python3
+#crmbook.usj.es ansible_python_interpreter=/usr/bin/python3
+#currante.usj.es
+#fanta2.usj.es ansible_python_interpreter=/usr/bin/python3
+#futuroscope.usj.es ansible_python_interpreter=/usr/bin/python3
+#rocinante.usj.es
+#pdumasters
+#193.146.64.130 ansible_python_interpreter=/usr/bin/python3
+#preapps.usj.es ansible_python_interpreter=/usr/bin/python3
+#pregonero3.usj.es ansible_connection=paramiko_ssh
+#river3.usj.es	 
+#sancho2.usj.es
+#193.146.64.98 ansible_python_interpreter=/usr/bin/python3	 
+#sita.usj.es	 
+#sitic3.usj.es
+#193.146.64.95 
+#survey2.usj.es
+#193.146.64.184 ansible_python_interpreter=/usr/bin/python3
+#Tom1.usj.es	 	 
+#vtuiapp.usj.es ansible_python_interpreter=/usr/bin/python3
+#usar en ocuapp2b redhat y etc/sysconfig/network-scripts/ifcfg-eth0 en lugar de ens192
+#ocuapp2b.usj.es	 
+#usar redhat con ens192
+#ocubi.usj.es	 
+#openaire.usj.es
+#172.16.9.57	 
+#pacmiusj.usj.es	 
+#parrilla.usj.es	 
+#pducoviar.usj.es ansible_python_interpreter=/usr/bin/python3	 
+#pduformacion.usj.es	 ansible_python_interpreter=/usr/bin/python3
+#job2.usj.es ansible_python_interpreter=/usr/bin/python3
+#usar redhat en leroy2
+#leroy2.usj.es	
+#koala.usj.es 
+#merits.usj.es ansible_python_interpreter=/usr/bin/python3	 
+#MonitorizacionPruebas.usj.es es
+#172.16.4.129 ansible_python_interpreter=/usr/bin/python3
+#myhome.usj.es ansible_python_interpreter=/usr/bin/python3	 
+#icuc2.usj.es ansible_python_interpreter=/usr/bin/python3	                
+#icuc3.usj.es	                 
+#193.146.64.137 ansible_python_interpreter=/usr/bin/python3
+#ikomidi.usj.es ansible_python_interpreter=/usr/bin/python3	                 
+#integraciononlinerpruebas.usj.es
+#193.146.64.116 ansible_python_interpreter=/usr/bin/python3
+#intranet2.usj.es ansible_python_interpreter=/usr/bin/python3	         
+#para cambiar dns en invescloud utilizar su propio yaml
+#invescloud.usj.es ansible_python_interpreter=/usr/bin/python3
+#eagle.usj.es
+#nmalone.usj.es ansible_connection=paramiko_ssh
+#protic.usj.es
+

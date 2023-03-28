@@ -1,0 +1,28 @@
+---
+- name: Cambia los nameservers en el archivo /etc/resolv.conf
+  hosts: test
+  become: yes
+  tasks:
+    - name: Reemplaza el nameserver actual 172.16.4.28 por 172.16.4.86
+      replace:
+        path: /etc/resolv.conf
+        regexp: 'nameserver 172.16.4.28'
+        replace: 'nameserver 172.16.4.86'
+
+    - name: Reemplaza el nameserver actual 172.19.9.28 por 172.16.4.186
+      replace:
+        path: /etc/resolv.conf
+        regexp: 'nameserver 172.19.9.28'
+        replace: 'nameserver 172.16.4.186'
+    
+    - name: Busca y reemplaza en RedHat DNS1 172.16.4.28 por 172.16.4.86
+      replace:
+        path: /etc/sysconfig/network-scripts/ifcfg-ens192
+        regexp: '^(DNS1=).*$'
+        replace: 'DNS1="172.16.4.86"'
+
+    - name: Busca y reemplaza en RedHat DNS2 172.19.9.28 por 172.16.4.186
+      replace:
+        path: /etc/sysconfig/network-scripts/ifcfg-ens192
+        regexp: '^(DNS2=).*$'
+        replace: 'DNS2="172.16.4.186"'

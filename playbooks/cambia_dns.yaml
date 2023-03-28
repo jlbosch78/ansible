@@ -1,0 +1,42 @@
+---
+- name: Cambia los nameservers en el archivo /etc/resolv.conf
+  hosts: d
+  become: yes
+  tasks:
+    - name: Reemplazar los nameservers actuales por 172.16.4.86 y 172.16.4.186
+      replace:
+        path: /etc/resolv.conf
+        regexp: 'nameserver .*$'
+        replace: 'nameserver 172.16.4.86'
+
+    - name: Reemplazar los nameservers actuales por 172.16.4.86 y 172.16.4.186
+      replace:
+        path: /etc/resolv.conf
+        regexp: 'nameserver .*$'
+        replace: 'nameserver 172.16.4.186'
+
+
+    - name: Update Ubuntu network interfaces
+      replace:
+        path: /etc/netplan/00-installer-config.yaml
+        regexp: '172.16.4.28'
+        replace: '172.16.4.86'
+    
+    - name: Update Debian network interfaces
+      replace:
+        path: /etc/network/interfaces
+        regexp: '^.*dns-nameservers .*$'
+        replace: '	dns-nameservers 172.16.4.86 172.16.4.186'
+
+    - name: Buscar y reemplazar DNS1 RedHat
+      replace:
+        path: /etc/sysconfig/network-scripts/ifcfg-ens192
+        regexp: '^(DNS1=).*$'
+        replace: 'DNS1="172.16.4.86"'
+
+    - name: Buscar y reemplazar DNS2 RedHat
+      replace:
+        path: /etc/sysconfig/network-scripts/ifcfg-ens192
+        regexp: '^(DNS2=).*$'
+        replace: 'DNS2="172.16.4.186"' 
+

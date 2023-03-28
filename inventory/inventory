@@ -1,0 +1,237 @@
+[xdecidir]
+#protic.usj.es ansible_connection=paramiko_ssh ansible_python_interpreter=/usr/bin/python3 CON ERROR
+#reactme.usj.es CON ERROR
+#ingoscar.usj.es mal pass root
+#riverpp.usj.es APAGADO
+#eagle.usj.es desconecta al usuario en poco tiempo eductic.usj.es
+#firepower.usj.es firewall de redes 
+#nmalone.usj.es ansible_connection=paramiko_ssh CON ERROR
+#protic.usj.es  CON ERROR
+#radius.usj.es IP debajo pero no conecta /Dejarlo, no hacer nada. Se cambiará
+#172.16.4.24
+#ubuntu16-vm.usj.es	 
+#VC-CORP-USJ-ZRG-01.usj.es	 
+#vcenter1.usj.es	 
+#vcenter1cs.usj.es	 
+#vcenter2.usj.es	 
+#vm-airwave.usj.es	 
+#vreplication.usj.es
+
+
+[test]
+appasistencia.usj.es
+parbol2.usj.es ansible_connection=paramiko_ssh
+pdufcom.usj.es
+pducuc2021.usj.es
+fanta.usj.es
+fanta1.usj.es
+pdueg.usj.es
+infyser2.usj.es
+sia.usj.es ansible_connection=paramiko_ssh
+zidane2.usj.es
+icuc.usj.es ansible_python_interpreter=/usr/bin/python3
+notec.usj.es
+#decathlon.usj.es
+193.146.64.104
+siges2.usj.es 
+dragon5wp.usj.es
+dragon5.usj.es
+dspace.usj.es
+bona2.usj.es
+spectrum2.usj.es
+river2.usj.es
+trueque2.usj.es
+dailyplanet.usj.es ansible_python_interpreter=/usr/bin/python3
+pmalone2.usj.es
+sumatra.usj.es 
+paul1.usj.es ansible_python_interpreter=/usr/bin/python3
+xmalone2.usj.es
+xcube2.usj.es 
+intranet.usj.es
+lex.usj.es
+convers.usj.es
+borneo8.usj.es ansible_python_interpreter=/usr/bin/python3
+borneo.usj.es 
+#padawan.usj.es
+193.146.66.25 ansible_python_interpreter=/usr/bin/python3
+gameworld.usj.es ansible_python_interpreter=/usr/bin/python3
+zubin1.usj.es
+#ocsusj.usj.es
+172.16.4.66 ansible_connection=paramiko_ssh
+cyber.usj.es
+rama.usj.es
+buho.usj.es
+cactus.usj.es
+buho1.usj.es
+rambo.usj.es
+aguila3b.usj.es
+#labyrinth.usj.es
+193.146.64.230
+#kzubincs.usj.es
+#172.16.9.242 ansible_connection=paramiko_ssh
+arbol2.usj.es
+zubin2.usj.es ansible_connection=paramiko_ssh
+arbol1c.usj.es
+riverdes.usj.es
+fanta1des.usj.es
+zidanedes.usj.es
+dragon5des.usj.es
+dragon5wpdes.usj.es
+siges2des.usj.es
+newsletterdes.usj.es
+gsvdes.usj.es
+infyserdes.usj.es
+#app-es VM pedida por Ana Vanessa Bataller por Sitic apagada por encender
+#193.146.64.101 ansible_python_interpreter=/usr/bin/python3
+
+[lydda]
+lydda.usj.es
+lydda1.usj.es
+lydda2.usj.es
+
+
+
+[apps]
+apps1.usj.es ansible_python_interpreter=/usr/bin/python3 
+apps2.usj.es ansible_python_interpreter=/usr/bin/python3 
+apps3.usj.es ansible_python_interpreter=/usr/bin/python3 
+apps4.usj.es ansible_python_interpreter=/usr/bin/python3 
+apps5.usj.es ansible_python_interpreter=/usr/bin/python3 
+
+[midas]
+midas1.usj.es
+midas2.usj.es
+midas3.usj.es
+midas4.usj.es
+midas5.usj.es 
+midas8.usj.es 
+midas8des.usj.es 
+midas1des.usj.es
+midas4des.usj.es
+midas5des.usj.es
+
+
+[uxxi]
+uxxiapppruebas.usj.es	
+uxxiauth.usj.es		
+uxxibd.usj.es		
+uxxi-consola.usj.es	
+#apagadas las dos siguientes
+#uxxirdoc.usj.es	 	
+#uxxirdocpruebas.usj.es	
+
+[webdes]
+webdes1.usj.es	 
+webdes2.usj.es	 
+webdes4.usj.es	 
+webdes5.usj.es	 
+webdes6.usj.es	 
+
+[quijote]
+quijote1c.usj.es	 
+quijote1cpp.usj.es	 
+quijote2b.usj.es	 
+quijote2bpp.usj.es	 
+
+[otro]
+arrival2b.usj.es 
+campusj.usj.es	 ansible_python_interpreter=/usr/bin/python3
+checkmk.usj.es ansible_python_interpreter=/usr/bin/python3	 
+cierzo.usj.es	 
+
+[c]
+cobi.usj.es             
+cope.usj.es ansible_python_interpreter=/usr/bin/python3             
+crmbook.usj.es ansible_python_interpreter=/usr/bin/python3         
+currante.usj.es      
+
+[d]
+dailybugle.usj.es	ansible_python_interpreter=/usr/bin/python3 
+dailybugledes.usj.es ansible_python_interpreter=/usr/bin/python3	 
+ddigital.usj.es ansible_python_interpreter=/usr/bin/python3          
+dhcp1.usj.es ansible_python_interpreter=/usr/bin/python3             
+#dragon5wp2.usj.es	 
+193.146.64.114 ansible_python_interpreter=/usr/bin/python3           
+dragon5wpdes2.usj.es ansible_python_interpreter=/usr/bin/python3	 
+dspace.usj.es           
+
+[f]
+fanta2.usj.es ansible_python_interpreter=/usr/bin/python3                    
+futuroscope.usj.es	 ansible_python_interpreter=/usr/bin/python3 
+ 
+
+[i]
+icuc2.usj.es ansible_python_interpreter=/usr/bin/python3	                
+#icuc3.usj.es	                 
+193.146.64.137 ansible_python_interpreter=/usr/bin/python3
+ikomidi.usj.es ansible_python_interpreter=/usr/bin/python3	                 
+#integraciononlinerpruebas.usj.es
+193.146.64.116 ansible_python_interpreter=/usr/bin/python3
+intranet2.usj.es ansible_python_interpreter=/usr/bin/python3	         
+#para cambiar dns en invescloud utilizar su propio yaml
+invescloud.usj.es ansible_python_interpreter=/usr/bin/python3	         
+
+[jklmn]
+job2.usj.es ansible_python_interpreter=/usr/bin/python3
+#usar redhat en leroy2
+leroy2.usj.es	
+koala.usj.es 
+merits.usj.es ansible_python_interpreter=/usr/bin/python3	 
+#MonitorizacionPruebas.usj.es es
+172.16.4.129 ansible_python_interpreter=/usr/bin/python3
+myhome.usj.es ansible_python_interpreter=/usr/bin/python3	 
+nemo1.usj.es ansible_python_interpreter=/usr/bin/python3	 
+#nemo1cs.usj.es actual dns secundario 172.19.9.28 no vale la pena hacer nada sobre el
+#nemo1cs.usj.es
+
+
+
+[op]
+#usar en ocuapp2b redhat y etc/sysconfig/network-scripts/ifcfg-eth0 en lugar de ens192
+ocuapp2b.usj.es	 
+OcuApp2bPruebas.usj.es	 
+#usar redhat con ens192
+ocubi.usj.es	 
+#openaire.usj.es
+172.16.9.57	 
+pacmiusj.usj.es	 
+parrilla.usj.es	 
+pducoviar.usj.es ansible_python_interpreter=/usr/bin/python3	 
+pduformacion.usj.es	 ansible_python_interpreter=/usr/bin/python3
+#pdumasters
+193.146.64.130 ansible_python_interpreter=/usr/bin/python3
+preapps.usj.es	ansible_python_interpreter=/usr/bin/python3 
+preproduccion2.usj.es ansible_python_interpreter=/usr/bin/python3
+pregonero3.usj.es ansible_connection=paramiko_ssh
+
+[vcenter]
+#ArubaMM1.usj.es	 
+#bullseye.usj.es	 
+
+[r]
+rocinante.usj.es
+
+[radius]
+#radius2.usj.es
+172.16.4.18	ansible_python_interpreter=/usr/bin/python3
+#radiuscs.usj.es	ansible_connection=paramiko_ssh  SIN PYTHON QUITAR
+radiusd1.usj.es	ansible_python_interpreter=/usr/bin/python3 
+radiusext2.usj.es ansible_python_interpreter=/usr/bin/python3	 
+#radiusvpn2.usj.es
+172.16.4.110 ansible_python_interpreter=/usr/bin/python3
+
+[rs]	 
+river3.usj.es	 
+#sancho2.usj.es
+193.146.64.98 ansible_python_interpreter=/usr/bin/python3	 
+sita.usj.es	 
+#sitic3.usj.es
+193.146.64.95 
+#survey2.usj.es
+193.146.64.184 ansible_python_interpreter=/usr/bin/python3
+
+[tuv]
+Tom1.usj.es	 	 
+vtuiapp.usj.es ansible_python_interpreter=/usr/bin/python3	 
+
+

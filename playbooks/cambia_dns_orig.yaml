@@ -1,0 +1,32 @@
+---
+- name: Cambia los nameservers en el archivo /etc/resolv.conf
+  hosts: webdes
+  become: yes
+  tasks:
+    - name: Reemplazar los nameservers actuales por 172.16.4.86 y 172.16.4.186
+       replace:
+            path: /etc/resolv.conf
+            regexp: 'nameserver 172.16.4.28'
+            replace: 'nameserver 172.16.4.86'
+
+    - name: Reemplazar los nameservers actuales por 172.16.4.86 y 172.16.4.186
+        replace:
+            path: /etc/resolv.conf
+            regexp: 'nameserver 172.19.9.28'
+            replace: 'nameserver 172.16.4.186'
+
+    - name: Reemplazar los nameservers actuales por 172.16.4.86 y 172.16.4.186
+        replace:
+            path: /etc/network/interfaces
+            regexp: 'dns-nameservers 172.16.4.28 172.19.9.28'
+            replace: 'dns-nameservers 172.16.4.86 172.16.4.186'
+            when: '"debian" in ansible_distribution|lower'	
+
+    - name: Para Red Hat cambia los nameservers en el archivo /etc/sysconfig/network-scripts/ifcfg-ens192 actuales por 172.16.4.86 y 172.16.4.186
+        replace:
+            path: /etc/sysconfig/network-scripts/ifcfg-ens192
+            regexp: 'DNS1=172.16.4.28'
+            replace: 'DNS1=172.16.4.86'
+            when: '"redhat" in ansible_distribution|lower'
+
+
